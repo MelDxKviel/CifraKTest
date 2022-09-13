@@ -1,0 +1,402 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /api/news/:
+    get:
+      operationId: listNewsLists
+      description: ''
+      parameters:
+      - name: type
+        required: false
+        in: query
+        description: type
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/NewsList'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createNewsCreate
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewsCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewsCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/NewsCreate'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsCreate'
+          description: ''
+      tags:
+      - api
+  /api/news/{id}/:
+    get:
+      operationId: retrieveNewsRetrieve
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: type
+        required: false
+        in: query
+        description: type
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsRetrieve'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateNewsRetrieve
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: type
+        required: false
+        in: query
+        description: type
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewsRetrieve'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewsRetrieve'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/NewsRetrieve'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsRetrieve'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateNewsRetrieve
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: type
+        required: false
+        in: query
+        description: type
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewsRetrieve'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewsRetrieve'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/NewsRetrieve'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsRetrieve'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyNewsRetrieve
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: type
+        required: false
+        in: query
+        description: type
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/types/:
+    get:
+      operationId: listNewsTypes
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/NewsType'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createNewsType
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewsType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewsType'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/NewsType'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsType'
+          description: ''
+      tags:
+      - api
+  /api/types/{id}/:
+    get:
+      operationId: retrieveNewsType
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsType'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateNewsType
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewsType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewsType'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/NewsType'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsType'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateNewsType
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewsType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewsType'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/NewsType'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsType'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyNewsType
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+components:
+  schemas:
+    NewsList:
+      type: object
+      properties:
+        title:
+          type: string
+          maxLength: 255
+        short_description:
+          type: string
+        type:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            name:
+              type: string
+              maxLength: 255
+            color:
+              type: string
+              maxLength: 31
+          required:
+          - name
+          - color
+      required:
+      - title
+      - short_description
+      - type
+    NewsRetrieve:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        type:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            name:
+              type: string
+              maxLength: 255
+            color:
+              type: string
+              maxLength: 31
+          required:
+          - name
+          - color
+        title:
+          type: string
+          maxLength: 255
+        short_description:
+          type: string
+        full_description:
+          type: string
+      required:
+      - type
+      - title
+      - short_description
+      - full_description
+    NewsType:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        color:
+          type: string
+          maxLength: 31
+      required:
+      - name
+      - color
+    NewsCreate:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        type:
+          type: integer
+        title:
+          type: string
+          maxLength: 255
+        short_description:
+          type: string
+        full_description:
+          type: string
+      required:
+      - type
+      - title
+      - short_description
+      - full_description
