@@ -22,7 +22,7 @@ cd CifraKTest
 ## Build and run docker-compose
 
 ```
-docker-compose run --build
+docker-compose up --build
 ```
 
 ## Make migrations
