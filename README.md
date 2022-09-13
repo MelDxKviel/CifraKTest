@@ -28,7 +28,7 @@ docker-compose up --build
 ## Make migrations
 
 ```
-docker-compose exec server python manage.py makemigraions
+docker-compose exec server python manage.py makemigrations
 ```
 ```
 docker-compose exec server python manage.py migrate
